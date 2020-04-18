@@ -1,13 +1,4 @@
-import math
-def is_prime(n):
-    """
-   判断一个数是否为素数
-   ----------------------
-   返回值： True,是素数
-           False,不是素数
-    """
-    return n > 1 and all(n % i for i in range(2, int(math.sqrt(n)) + 1))
-
-twin_primes = {(x, x+2) for x in range(1,100,2) if is_prime(x) and is_prime(x+2)}
-
-print(twin_primes)
+accumulation_sum = 0  
+for i in range(101):       #生成[0,100]步长为1的序列  
+    accumulation_sum +=  i #累加  
+print(f'the sum of 1 to 100 is : {accumulation_sum}')

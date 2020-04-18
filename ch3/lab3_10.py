@@ -1,16 +1,9 @@
-try:
-    f = open('integers.txt', 'w+')
-    num = int(input("Enter an integer: "))
-except ValueError:
-    #当输入数据类型异常发生时，输出提示信息
-    print('Error: Integer type is required!')
-else:  #没有异常发生，将num写入文件
-    f.write(str(num))
-    print('Write num into file.')
-finally:  #不管是否发生异常，关闭文件，释放资源
-    f.close()
-    print('Finally, close the file.')
-
-user_input = input('Enter a string:')  #读入用户输入
-a = user_input if user_input else 'default'  #若用户输入为空，则使用默认字符串
-
+a, b = 9, 3  # 初始化a,b，a必须大于b  
+greatest_common_divisor, least_common_multiple = 0,0  
+for factor in range(b, 0, -1):  
+    #若a,b都能整除factor  
+    if b%factor == 0 and a%factor == 0:   
+        #找到最大公约数和最小公倍数  
+        greatest_common_divisor, least_common_multiple = factor, a*b//factor
+        break  
+print(greatest_common_divisor, least_common_multiple)

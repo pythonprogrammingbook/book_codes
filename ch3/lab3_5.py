@@ -1,6 +1,4 @@
-counter = 0           #初始化counter为0
-while True:
-    counter += 1      #counter累加1
-    print(counter)    #输出counter值
-    if counter >= 10: #当counter大于等于10时，跳出while循环
-        break
+input_list = []
+if not input_list:  #若输入列表为空
+    print('list is empty')
+

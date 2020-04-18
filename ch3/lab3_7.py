@@ -1,4 +1,6 @@
-accumulation_sum = 0
-for i in range(101):
-    accumulation_sum = accumulation_sum + i
-print("The sum of 1 from 100 is:{0:d}".format(accumulation_sum))
+counter = 0           #初始化counter为0
+while True:
+    counter += 1      #counter累加1
+    print(counter)    #输出counter值
+    if counter >= 10: #当counter大于等于10时，跳出while循环
+        break
