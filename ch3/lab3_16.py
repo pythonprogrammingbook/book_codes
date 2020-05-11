@@ -1,12 +1,14 @@
-try:
-    f = open('integers.txt', 'w+')
-    num = int(input("Enter an integer: "))
-except ValueError:
-    #当输入数据类型异常发生时，输出提示信息
-    print('Error: Integer type is required!')
-else:  #没有异常发生，将num写入文件
-    f.write(str(num))
-    print('Write num into file.')
-finally:  #不管是否发生异常，关闭文件，释放资源
-    f.close()
-    print('Finally, close the file.')
+while True:  
+    try:  
+        dividend = int(input('Enter an integer dividend:'))#从键盘输入被除数  
+        divisor = int(input('Enter an integer divisor:'))   #从键盘输入除数  
+        result = dividend / divisor         
+    except ZeroDivisionError:                         #捕捉除数为零异常  
+    # 当除数为零异常发生，输出提示信息  
+        print('Error: divisor can NOT be Zero!')  
+    except ValueError:                                #捕捉输入数据类型异常  
+    # 当输入数据类型异常发生，输出提示信息  
+        print('Error:Ingeter type is required!')  
+    else:   #没有异常发生，输出计算结果  
+        print('Result is {0:.2f}'.format(result))  
+        break 
