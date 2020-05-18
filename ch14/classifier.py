@@ -9,9 +9,6 @@ x1 = torch.normal(-n_data, 1) # 类别1
 y1 = torch.ones(100)          # 标签1
 x = torch.cat((x0, x1), 0)    # 将两类数据连接起来
 y = torch.cat((y0, y1), 0).type(torch.LongTensor) #标签是整数
-#显示数据
-#plt.scatter(x.data.numpy()[:, 0], x.data.numpy()[:, 1], c=y.data.numpy(), s=100, lw=0, cmap='RdYlGn')
-#plt.show()
 
 # 定义一个Neuron Networks类，
 class NN(torch.nn.Module):
@@ -25,7 +22,6 @@ class NN(torch.nn.Module):
         x = F.relu(self.hidden(x))  #隐藏层使用relu()激活函数
         x = self.output(x)  #输出层不使用激活函数
         return x
-
 
 nn = NN()  #实例化一个神经网络
 print(nn)  #输出神经网络结构
